@@ -4,4 +4,5 @@ import numpy
 import talib
 
 close = numpy.random.random(100)
-print(close)
+output = talib.MA(close, 44)
+print(output)
