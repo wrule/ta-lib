@@ -13,11 +13,11 @@ list = []
 for key, value in data['data']['points'].items():
   list.append({
     'time': int(key),
-    'value': value,
+    'price': value['v'][0],
   })
-list.sort(key = lambda x: x['time'], reverse = True)
+list.sort(key = lambda x: x['time'], reverse = False)
 for item in list:
-  print(datetime.datetime.fromtimestamp(item['time']))
+  print(datetime.datetime.fromtimestamp(item['time']), item['price'])
 
 # print(len(data['data']['points']))
 
