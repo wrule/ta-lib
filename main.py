@@ -16,8 +16,10 @@ for key, value in data['data']['points'].items():
     'price': value['v'][0],
   })
 list.sort(key = lambda x: x['time'], reverse = False)
-for item in list:
-  print(datetime.datetime.fromtimestamp(item['time']), item['price'])
+
+prices = map(lambda x: x['price'], list)
+
+print(len(prices))
 
 # print(len(data['data']['points']))
 
